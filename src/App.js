@@ -1,24 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
-
+import {BrowserRouter as Router , Route, Switch} from 'react-router-dom'
+import Grocery from './grocery/grocery';
+import Lorem from './lorem/lorem';
+import Slider from './slider/slider'
+import Tabs from "./tabs/tabs"
 function App() {
+
+
+  const url = 'https://course-api.com/react-tabs-project'
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <Router>
+
+    <div className="app">
+      
+      <Switch>
+
+        <Route exact path ="/tabs">
+          <Tabs url ={url}/>
+        </Route>
+        <Route exact path ="/slider">
+          <Slider/>
+        </Route>
+        <Route exact path ="/lorem">
+          <Lorem/>
+        </Route>
+        <Route exact path ="/grocery">
+          <Grocery/>
+        </Route>
+
+
+
+
+
+
+
+
+      </Switch>
+      
+
+
+
+
+
     </div>
+
+
+    </Router>
+
+
+
   );
 }
 
